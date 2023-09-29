@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      font-size: 22px;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      font-family: Arial, Helvetica;
+    }
+
+    .card-container {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .cover,
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: transform .25s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      border-radius: .4rem;
+      box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .18);
+    }
+
+    .cover {
+      background-color: blue;
+      transform: rotateY(0deg);
+      background-image: linear-gradient( 109.6deg,  rgba(254,87,98,1) 11.2%, rgba(255,107,161,1) 99.1% );
+    }
+
+    .card-container:hover .cover {
+      transform: rotateY(180deg);
+    }
+
+    .back {
+      background-color: yellow;
+      transform: rotateY(-180deg);
+      background-image: linear-gradient(68.2deg, rgba(255, 202, 88, 1) 0%, rgba(139, 73, 255, 1) 100.2%);
+    }
+
+    .card-container:hover .back {
+      transform: rotateY(0deg);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="card-container">
+    <div class="cover">
+      cover
+    </div>
+    <div class="back">
+      back
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="cover">
+      cover
+    </div>
+    <div class="back">
+      back
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="cover">
+      cover
+    </div>
+    <div class="back">
+      back
+    </div>
+  </div>
+</body>
+
+</html>

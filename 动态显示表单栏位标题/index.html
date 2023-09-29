@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      font-size: 15px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #29f1c3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .row {
+      width: 400px;
+      margin: .6rem 0;
+      position: relative;
+    }
+
+    .row input {
+      font-size: 1rem;
+      border: 1px solid #03c9a9;
+      border-radius: 4px;
+      margin: 0;
+      padding: .6rem .8rem;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      box-sizing: border-box;
+      color: #2e3131;
+      outline: none;
+      transition: all ease-in-out .2s;
+    }
+
+    .row label {
+      position: absolute;
+      left: .8rem;
+      top: .6rem;
+      color: #ccc;
+      transition: all ease-in-out .2s;
+    }
+
+    h2 {
+      font-size: 2rem;
+      letter-spacing: .1rem;
+      margin-bottom: 2rem;
+    }
+
+    .row input:focus {
+      border: 1px solid #1ba39c;
+    }
+
+    .row input:focus+label {
+      transform: translateX(calc(-100% - 2rem));
+      color: #2e3131;
+    }
+
+    input:not(:focus):not(:placeholder-shown)+label {
+      color: rgba(0, 0, 0, 0);
+    }
+
+    .row button {
+      background: none;
+      border: none;
+      position: absolute;
+      top: calc(50% + 1px);
+      transform: translateY(-50%);
+      right: calc(.5rem + 1px);
+      margin: 0;
+      padding: 0;
+      outline: none;
+      display: none;
+    }
+
+    .row input[type="password"]:not(:placeholder-shown)~button {
+      display: inline-block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h2>会员登陆</h2>
+  <div class="row">
+    <input type="text" id="username" placeholder=" ">
+    <label for="username">用户名称</label>
+  </div>
+  <div class="row">
+    <input type="password" id="username" placeholder=" ">
+    <label for="password">密码</label>
+    <button>
+      <svg width="24px" height="24px" t="1619001723972" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3214" width="64" height="64">
+        <path d="M792.797779 792.08607c71.14434-71.800279 115.542526-170.937161 115.542526-280.334733 0-109.398596-44.398186-208.534454-115.542526-280.334733-71.713298-71.222111-170.742732-115.669416-280.025695-115.669416l0 0c-109.282962 0-208.303186 44.447305-280.026718 115.669416l0 0c-71.704089 71.800279-116.111484 170.936137-116.111484 280.334733l0 0 0 0 0 0c0 109.397572 44.407396 208.534454 116.111484 280.334733 71.724555 71.78186 170.743756 116.227118 280.026718 116.227118l0 0 0 0C622.055047 908.313188 721.084481 863.868953 792.797779 792.08607L792.797779 792.08607zM829.228503 194.956204c80.8197 81.484849 130.909515 193.140858 130.909515 316.796156 0 123.634832-50.088792 235.888452-130.909515 316.795133-81.387635 80.906681-192.947454 131.043568-316.456419 131.043568-123.500778 0-235.637742-50.135864-316.447209-131.043568C115.495966 747.640812 65.416384 635.386168 65.416384 511.751337c0-123.655298 50.079582-235.310284 130.908492-316.796156C277.13332 114.049522 389.271306 63.893192 512.772085 63.893192l0 0C636.281049 63.893192 747.840868 114.049522 829.228503 194.956204L829.228503 194.956204zM434.239474 272.448112c4.551666-4.572132 10.803044-7.408737 18.210757-7.408737l0 0c3.412726 0 6.828522 0.559748 9.66308 1.717108 3.415796 1.697665 6.27082 3.39533 8.547677 5.691629l0 0 200.913892 221.054605c2.276856 2.856048 3.984754 5.130857 5.691629 8.565073 1.137916 2.855024 1.706875 6.250354 1.706875 9.68457 0 3.413749-0.568958 6.829546-1.706875 10.263761-1.706875 2.834558-3.414773 5.689582-5.691629 7.966439L470.659965 751.055584l0 0c-2.276856 2.854001-5.131881 4.552689-8.547677 5.690606-2.835581 1.137916-6.250354 2.276856-9.66308 2.276856-7.407714 0-13.659091-3.413749-18.210757-7.966439l0 0c-4.552689-4.553713-7.407714-10.82351-7.407714-18.2302 0-3.414773 0.559748-6.847965 1.697665-9.683547 1.157359-2.856048 3.433192-5.711072 5.710049-7.987928l184.401824-203.402573L434.239474 308.907489c-2.276856-2.275833-4.552689-5.131881-5.710049-7.966439-1.137916-3.433192-1.697665-6.848988-1.697665-10.262738C426.830737 283.84979 429.685761 277.000801 434.239474 272.448112L434.239474 272.448112z" p-id="3215"></path>
+      </svg>
+    </button>
+  </div>
+</body>
+
+</html>
