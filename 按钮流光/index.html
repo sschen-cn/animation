@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <title>Document</title>
+  <style lang="css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+
+    }
+
+    .button {
+      position: relative;
+      width: auto;
+      box-sizing: border-box;
+      box-shadow: rgba(0, 255, 240, 0.12) 0px 2px 4px -1px, rgba(0, 71, 255, 0.08) 0px 4px 5px, rgba(0, 102, 255, 0.05) 0px 1px 10px;
+      background: conic-gradient(rgb(0, 195, 255), rgb(76, 235, 27), rgb(0, 98, 255), rgb(160, 124, 243), rgb(0, 195, 255));
+      height: 40px;
+      padding: 2px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 500%;
+      background-repeat: no-repeat;
+      background-size: 150% 150%;
+      background-position: center center;
+      background: conic-gradient(rgb(0, 195, 255), rgb(76, 235, 27), rgb(0, 98, 255), rgb(160, 124, 243), rgb(0, 195, 255));
+      animation: rotateAnime 1.2s linear infinite;
+    }
+
+    .button::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 2px;
+      top: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      background: white;
+      border-radius: 4px;
+    }
+
+    .button-inner {
+      padding: 0 12px;
+      display: flex-inline;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-text {
+      width: 128px;
+      text-align: center;
+      background: conic-gradient(rgb(0, 195, 255), rgb(0, 98, 255), rgb(160, 124, 243));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+
+    @keyframes rotateAnime {
+      100% {
+        transform: translate(-50%, -50%) rotate(1turn);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="button">
+      <div class="button-inner">
+        <div class="button-text">Click me</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
